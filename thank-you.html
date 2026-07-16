@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You're In — Beyond the Pitch</title>
+<meta name="description" content="Welcome to Beyond the Pitch. Here's exactly what to do next.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Beau+Rivage&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<!-- Script accent (Playlist Script unavailable — Beau Rivage, a free Google Font, standing in). -->
+<style>
+  :root{
+    --sage:#6F7154; --moss:#3E4432; --terra:#D08B6E; --terra-ink:#A85A3C;
+    --blush:#F4E8E1; --sand:#EADCC9; --ivory:#FBF7F2; --ink:#40382F; --muted:#847E6E;
+    --serif:'Cormorant Garamond',Georgia,serif; --sans:'Lato',-apple-system,Arial,sans-serif;
+    --script:'Beau Rivage',cursive;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:var(--sans);color:var(--ink);background:var(--ivory);line-height:1.6;font-size:17px;
+    min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .em{font-style:italic;color:var(--terra-ink);}
+  .top{padding:26px;text-align:center;}
+  .brandlink{display:inline-flex;align-items:center;gap:9px;}
+  .brandlink img{height:30px;width:auto;}
+  .wordmark{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--moss);}
+  .wordmark i{font-family:var(--script);font-style:normal;font-size:1.3em;color:var(--terra-ink);}
+  main{flex:1;display:flex;align-items:center;justify-content:center;padding:20px 24px 50px;}
+  .card{max-width:620px;width:100%;text-align:center;background:#fff;border:1px solid #ece2d5;
+    border-radius:20px;padding:52px 46px;box-shadow:0 18px 60px rgba(62,68,50,.08);}
+  .eyebrow{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra-ink);}
+  h1{font-family:var(--serif);font-weight:600;color:var(--moss);font-size:38px;line-height:1.14;margin:14px 0 14px;}
+  .sub{font-size:18px;color:#4a4239;margin-bottom:30px;}
+
+  .firstaction{background:var(--blush);border-radius:14px;padding:26px 28px;text-align:left;margin-bottom:24px;}
+  .firstaction .tag{font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--terra-ink);display:block;margin-bottom:8px;}
+  .firstaction p{font-size:16.5px;color:#453d34;}
+  .firstaction .btn{display:inline-block;margin-top:16px;font-family:var(--sans);font-weight:700;font-size:14px;
+    padding:12px 24px;border-radius:8px;background:var(--terra-ink);color:#fff;}
+
+  .nextinfo{text-align:left;margin-bottom:24px;}
+  .nextinfo h3{font-family:var(--serif);color:var(--moss);font-size:18px;margin-bottom:10px;}
+  .nextinfo ul{list-style:none;}
+  .nextinfo li{position:relative;padding:6px 0 6px 26px;font-size:15px;color:#453d34;}
+  .nextinfo li::before{content:"✓";position:absolute;left:0;color:var(--terra-ink);font-weight:900;}
+
+  .invite{border:1.5px dashed var(--sage);background:var(--sand);border-radius:14px;padding:20px 24px;font-size:15px;color:#453d34;}
+  .invite a{font-weight:700;color:var(--terra-ink);}
+
+  footer{text-align:center;padding:22px;font-size:12.5px;color:var(--muted);}
+  footer a{color:var(--sage);text-decoration:none;}
+  @media(max-width:600px){.card{padding:36px 26px;}h1{font-size:29px;}}
+</style>
+</head>
+<body>
+  <div class="top">
+    <a href="index.html" class="brandlink" aria-label="Beyond the Pitch home">
+      <img src="assets/logo-mark.png" alt="">
+      <span class="wordmark">beyond <i>the</i> pitch</span>
+    </a>
+  </div>
+  <main>
+    <div class="card">
+      <span class="eyebrow">You're In</span>
+      <h1>Welcome to <span class="em">Beyond the Pitch.</span></h1>
+      <p class="sub">Here's exactly what to do next.</p>
+
+      <div class="firstaction">
+        <span class="tag">Your first action</span>
+        <p>Open Module 1 and complete the 10-minute setup worksheet. That's it — don't try to do everything at once. Momentum starts with this one step.</p>
+        <!-- Replace href="#" with the real login/course link once your platform is connected. -->
+        <a class="btn" href="#">Open Module 1 →</a>
+      </div>
+
+      <div class="nextinfo">
+        <h3>What happens next</h3>
+        <ul>
+          <li>Your login details are in the welcome email — check your inbox (and spam folder) now.</li>
+          <li>A short welcome sequence starts today, walking you through the first week.</li>
+          <li>Questions any time — just reply to any email. A real person reads them.</li>
+        </ul>
+      </div>
+
+      <div class="invite">
+        Not building alone anymore — <a href="#">come introduce yourself in the community</a> whenever you're ready. No pressure, no rush.
+      </div>
+    </div>
+  </main>
+  <footer>
+    Beyond the Pitch · Hype, into the real work. &nbsp;·&nbsp; <a href="index.html">← Back to home</a>
+  </footer>
+</body>
+</html>

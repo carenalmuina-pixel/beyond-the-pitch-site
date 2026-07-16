@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work With Me — Beyond the Pitch</title>
+<meta name="description" content="Personalized coaching to help you gain clarity, set strategy, and take aligned action — when you're ready for a real plan and someone in your corner.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Beau+Rivage&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<!-- Script accent (Playlist Script unavailable — Beau Rivage, a free Google Font, standing in). -->
+<style>
+  :root{
+    --sage:#6F7154; --moss:#3E4432; --terra:#D08B6E; --terra-ink:#A85A3C;
+    --blush:#F4E8E1; --sand:#EADCC9; --ivory:#FBF7F2; --ink:#40382F; --muted:#847E6E;
+    --serif:'Cormorant Garamond',Georgia,serif; --sans:'Lato',-apple-system,Arial,sans-serif;
+    --script:'Beau Rivage',cursive;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);color:var(--ink);background:var(--ivory);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:var(--serif);color:var(--moss);font-weight:600;line-height:1.14;}
+  a{color:inherit;text-decoration:none;}
+  .em{font-style:italic;color:var(--terra-ink);}
+  .wrap{max-width:900px;margin:0 auto;padding:0 26px;}
+  .eyebrow{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra-ink);}
+  .btn{display:inline-block;font-family:var(--sans);font-weight:700;font-size:15px;letter-spacing:.3px;
+    padding:15px 32px;border-radius:9px;cursor:pointer;transition:.2s;border:2px solid transparent;}
+  .btn-primary{background:var(--terra-ink);color:#fff;}
+  .btn-primary:hover{background:#95502f;}
+
+  header{padding:22px 0;border-bottom:1px solid #ece2d5;}
+  .nav{display:flex;align-items:center;justify-content:space-between;}
+  .brandlink{display:inline-flex;align-items:center;gap:9px;}
+  .brandlink img{height:30px;width:auto;}
+  .wordmark{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--moss);}
+  .wordmark i{font-family:var(--script);font-style:normal;font-size:1.3em;color:var(--terra-ink);}
+
+  .hero{padding:60px 0 20px;text-align:center;}
+  .hero h1{font-size:40px;margin:14px 0 16px;}
+  .hero .lead{font-size:19px;color:#4a4239;max-width:34em;margin:0 auto;}
+
+  section.block{padding:44px 0;border-top:1px solid #ece2d5;}
+  section.block .k{font-family:var(--sans);font-weight:700;font-size:11.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--terra-ink);}
+  section.block h2{font-size:28px;margin:10px 0 16px;}
+
+  .fitgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px;}
+  .fitcard{border-radius:14px;padding:24px 24px;}
+  .fitcard.yes{background:var(--blush);border-left:4px solid var(--sage);}
+  .fitcard.no{background:#fff;border:1px solid #ece2d5;border-left:4px solid var(--muted);}
+  .fitcard h3{font-size:16px;margin-bottom:10px;}
+  .fitcard ul{list-style:none;}
+  .fitcard li{position:relative;padding:5px 0 5px 22px;font-size:15px;color:#453d34;}
+  .fitcard.yes li::before{content:"✓";position:absolute;left:0;color:var(--sage);font-weight:900;}
+  .fitcard.no li::before{content:"✕";position:absolute;left:0;color:var(--muted);font-weight:900;}
+
+  .outcome p{font-size:17px;color:#453d34;}
+
+  .formats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px;}
+  .fcard{background:#fff;border:1px solid #ece2d5;border-radius:14px;padding:24px 22px;}
+  .fcard h3{font-size:19px;margin-bottom:4px;}
+  .fcard .price{font-family:var(--serif);color:var(--terra-ink);font-weight:700;font-size:20px;margin-bottom:8px;}
+  .fcard p{font-size:14px;color:var(--muted);}
+
+  .how{counter-reset:step;}
+  .how li{list-style:none;counter-increment:step;position:relative;padding:10px 0 10px 42px;font-size:16px;color:#453d34;}
+  .how li::before{content:counter(step);position:absolute;left:0;top:8px;width:26px;height:26px;border-radius:50%;
+    background:var(--sage);color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+
+  .ctablock{background:var(--sage);color:#f4f0e7;text-align:center;padding:54px 0;}
+  .ctablock h2{color:#fff;font-size:30px;margin-bottom:12px;}
+  .ctablock p{max-width:30em;margin:0 auto 26px;font-size:16px;color:#eae6d9;}
+  .ctablock .btn-primary{background:var(--terra);color:#3a2418;}
+  .ctablock .btn-primary:hover{background:#e6a184;}
+
+  footer{background:var(--moss);color:#cdc7ba;padding:44px 0 26px;text-align:center;}
+  footer .flogo{display:flex;align-items:center;justify-content:center;gap:9px;}
+  footer .flogo img{height:26px;width:auto;}
+  footer .wordmark{font-family:var(--serif);font-size:22px;color:#f4f0e7;}
+  footer .wordmark i{font-family:var(--script);font-style:normal;font-size:1.3em;color:var(--terra);}
+  footer .tag{font-family:var(--sans);letter-spacing:2px;text-transform:uppercase;font-size:11px;color:var(--terra);margin-top:8px;}
+  footer .back{display:inline-block;margin-top:18px;color:#cdc7ba;font-size:13px;}
+  footer .back:hover{color:#fff;}
+
+  @media(max-width:760px){.fitgrid,.formats{grid-template-columns:1fr;} .hero h1{font-size:30px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brandlink" aria-label="Beyond the Pitch home">
+      <img src="assets/logo-mark.png" alt="">
+      <span class="wordmark">beyond <i>the</i> pitch</span>
+    </a>
+    <a href="index.html" style="font-size:13px;font-weight:700;color:var(--sage);">← Home</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero wrap">
+  <span class="eyebrow">Work With Me</span>
+  <h1>When you're ready for a real plan<br>and someone in your <span class="em">corner.</span></h1>
+  <p class="lead">Personalized coaching to help you gain clarity, set strategy, and take aligned action.</p>
+</section>
+
+<!-- ============ WHO IT'S FOR ============ -->
+<section class="block wrap">
+  <span class="k">Fit, Honestly</span>
+  <h2>Who this is (and isn't) for</h2>
+  <div class="fitgrid">
+    <div class="fitcard yes">
+      <h3>For you if:</h3>
+      <ul>
+        <li>You're past the very beginning</li>
+        <li>You're ready to do the work</li>
+        <li>You want a clear plan and honest accountability</li>
+      </ul>
+    </div>
+    <div class="fitcard no">
+      <h3>Not for you if:</h3>
+      <ul>
+        <li>You want someone to do it for you</li>
+        <li>You're looking for a magic shortcut</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUTCOME ============ -->
+<section class="block wrap outcome">
+  <span class="k">The Outcome</span>
+  <h2>What you'll leave with</h2>
+  <p>A focused strategy, the next 90 days mapped, and a coach who knows your business and tells you the truth.</p>
+</section>
+
+<!-- ============ FORMATS ============ -->
+<section class="block wrap">
+  <span class="k">The Formats</span>
+  <h2>Pick the level of support you need</h2>
+  <div class="formats">
+    <div class="fcard"><h3>Single Session</h3><div class="price">$150–300</div><p>For a specific problem you need help working through, once.</p></div>
+    <div class="fcard"><h3>Monthly Coaching</h3><div class="price">$500–1,500</div><p>For ongoing momentum — regular calls, accountability, a plan that evolves with you.</p></div>
+    <div class="fcard"><h3>VIP Intensive</h3><div class="price">Apply to inquire</div><p>A done-with-you deep dive. Spots are intentionally capped.</p></div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="block wrap">
+  <span class="k">How It Works</span>
+  <h2>Two simple steps</h2>
+  <ol class="how">
+    <li>Book a short fit call, or apply if you'd rather write it out first.</li>
+    <li>If we're a match, we start. If we're not, I'll point you to the right resource instead — no pressure either way.</li>
+  </ol>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="ctablock">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--terra);">Ready When You Are</span>
+    <h2>Let's talk about what you're building.</h2>
+    <p>Trust does the selling here — no hard pitch, just a real conversation about whether this is the right fit.</p>
+    <!--
+      BOOKING CONNECTION POINT
+      Replace href="#" with your real booking link (a free Calendly, or Systeme.io's
+      built-in calendar) once it exists.
+    -->
+    <a class="btn btn-primary" href="#">Book a Fit Call</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flogo"><img src="assets/logo-badge-terracotta.png" alt=""><div class="wordmark">beyond <i>the</i> pitch</div></div>
+    <div class="tag">Hype, into the real work.</div>
+    <a class="back" href="index.html">← Back to home</a>
+  </div>
+</footer>
+
+</body>
+</html>

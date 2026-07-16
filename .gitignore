@@ -1,0 +1,7 @@
+# Only the public website is tracked in this repo.
+# Everything else (strategy docs, PDFs, design references, personal photos) stays local.
+*
+!*.html
+!assets/
+!assets/*.png
+!.gitignore

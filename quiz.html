@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Business Readiness Quiz — Beyond the Pitch</title>
+<meta name="description" content="Answer 10 quick questions. Get a personalized roadmap and your single most important next step.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Beau+Rivage&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<!-- Script accent (Playlist Script unavailable — Beau Rivage, a free Google Font, standing in). -->
+<style>
+  :root{
+    --sage:#6F7154; --moss:#3E4432; --terra:#D08B6E; --terra-ink:#A85A3C;
+    --blush:#F4E8E1; --sand:#EADCC9; --ivory:#FBF7F2; --ink:#40382F; --muted:#847E6E;
+    --serif:'Cormorant Garamond',Georgia,serif; --sans:'Lato',-apple-system,Arial,sans-serif;
+    --script:'Beau Rivage',cursive;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:var(--sans);color:var(--ink);background:var(--ivory);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:var(--serif);color:var(--moss);font-weight:600;line-height:1.15;}
+  a{color:inherit;}
+  .em{font-style:italic;color:var(--terra-ink);}
+  .wrap{max-width:760px;margin:0 auto;padding:0 26px;}
+  .eyebrow{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra-ink);}
+  .btn{display:inline-block;font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:.3px;
+    padding:14px 30px;border-radius:8px;cursor:pointer;transition:.2s;border:2px solid transparent;}
+  .btn-primary{background:var(--terra-ink);color:#fff;}
+  .btn-primary:hover{background:#95502f;}
+  .btn-primary:disabled{background:#d8ccbe;cursor:not-allowed;}
+  .btn-ghost{border-color:var(--sage);color:var(--moss);background:transparent;}
+
+  header{padding:24px 0;text-align:center;border-bottom:1px solid #ece2d5;}
+  .brandlink{display:inline-flex;align-items:center;gap:9px;}
+  .wordmark{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--moss);}
+  .wordmark i{font-family:var(--script);font-style:normal;font-size:1.3em;color:var(--terra-ink);}
+
+  main{padding:56px 0 80px;}
+  .card{background:#fff;border:1px solid #ece2d5;border-radius:20px;padding:46px 42px;box-shadow:0 18px 60px rgba(62,68,50,.07);}
+
+  /* start screen */
+  #screen-start h1{font-size:38px;margin:12px 0 14px;}
+  #screen-start .sub{font-size:18px;color:#4a4239;margin-bottom:20px;}
+  #screen-start p.intro{color:#544c42;margin-bottom:28px;}
+
+  /* progress */
+  .progress-track{height:6px;border-radius:6px;background:var(--sand);overflow:hidden;margin-bottom:26px;}
+  .progress-fill{height:100%;background:var(--terra-ink);width:10%;transition:width .3s;}
+  .progress-label{font-size:12.5px;color:var(--muted);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;}
+
+  /* question */
+  .qtext{font-size:25px;margin-bottom:20px;}
+  .options{display:flex;flex-direction:column;gap:12px;margin-bottom:28px;}
+  .option{display:flex;align-items:flex-start;gap:13px;padding:16px 18px;border:1.5px solid var(--sand);
+    border-radius:12px;cursor:pointer;transition:.15s;background:var(--ivory);}
+  .option:hover{border-color:var(--sage);}
+  .option.selected{border-color:var(--terra-ink);background:var(--blush);}
+  .option input{margin-top:3px;accent-color:var(--terra-ink);}
+  .option span{font-size:15.5px;color:#453d34;}
+  .qnav{display:flex;justify-content:space-between;align-items:center;}
+  .qnav button{border:none;background:none;font-family:var(--sans);font-weight:700;font-size:13px;
+    letter-spacing:.5px;color:var(--muted);cursor:pointer;}
+  .qnav button:hover{color:var(--moss);}
+  .qnav button:disabled{opacity:.35;cursor:not-allowed;}
+
+  /* results */
+  #screen-results .eyebrow2{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:2px;
+    text-transform:uppercase;color:var(--sage);}
+  #screen-results h1{font-size:34px;margin:10px 0 4px;}
+  #screen-results .profile-tag{font-family:var(--serif);font-style:italic;color:var(--terra-ink);font-size:20px;margin-bottom:20px;}
+  #screen-results .block{margin-bottom:16px;}
+  #screen-results .block b{color:var(--moss);}
+  #screen-results .resource a{color:var(--terra-ink);font-weight:700;text-decoration:underline;}
+  .divider{height:1px;background:#ece2d5;margin:26px 0;}
+  form.capture{display:flex;flex-direction:column;gap:12px;max-width:26em;margin-top:6px;}
+  form.capture input{font-family:var(--sans);font-size:16px;padding:14px 16px;border:1.5px solid var(--sand);
+    border-radius:9px;background:var(--ivory);color:var(--ink);}
+  form.capture input:focus{outline:none;border-color:var(--sage);}
+  form.capture button{font-family:var(--sans);font-weight:700;font-size:15px;padding:15px;border:none;
+    border-radius:9px;background:var(--terra-ink);color:#fff;cursor:pointer;}
+  form.capture button:hover{background:#95502f;}
+  .reassure{font-size:13px;color:var(--muted);margin-top:12px;font-style:italic;}
+
+  footer{text-align:center;padding:30px 26px;font-size:12.5px;color:var(--muted);}
+  footer a{color:var(--sage);}
+  .hidden{display:none !important;}
+  @media(max-width:640px){.card{padding:32px 24px;} #screen-start h1{font-size:30px;} .qtext{font-size:21px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="brandlink" aria-label="Beyond the Pitch home">
+    <img src="assets/logo-mark.png" alt="" style="height:32px;width:auto;">
+    <span class="wordmark">beyond <i>the</i> pitch</span>
+  </a>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <!-- ============ START ============ -->
+    <section id="screen-start" class="card">
+      <span class="eyebrow">Free · 2-Minute Quiz</span>
+      <h1>What's your business readiness?</h1>
+      <p class="sub"><span class="em">Answer 10 quick questions.</span> Get a personalized roadmap and your single most important next step.</p>
+      <p class="intro">Most people don't need more information — they need to know what to do first. This 2-minute quiz tells you exactly where you are and what to focus on next. No email required to begin.</p>
+      <button class="btn btn-primary" onclick="startQuiz()">Start the Quiz</button>
+    </section>
+
+    <!-- ============ QUESTIONS ============ -->
+    <section id="screen-questions" class="card hidden">
+      <div class="progress-label" id="progress-label">Question 1 of 10</div>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="qtext" id="qtext"></div>
+      <div class="options" id="options"></div>
+      <div class="qnav">
+        <button id="btn-back" onclick="prevQ()">← Back</button>
+        <button class="btn btn-primary" id="btn-next" onclick="nextQ()" disabled>Next</button>
+      </div>
+    </section>
+
+    <!-- ============ RESULTS ============ -->
+    <section id="screen-results" class="card hidden">
+      <span class="eyebrow2">Your Results</span>
+      <h1>Here's where you are — and your next move.</h1>
+      <div class="profile-tag" id="profile-tag"></div>
+
+      <div class="block"><b>Where you are:</b> <span id="result-where"></span></div>
+      <div class="block"><b>Your #1 next step:</b> <span id="result-step"></span></div>
+      <div class="block resource"><b>Best first resource:</b> <span id="result-resource"></span></div>
+
+      <div class="divider"></div>
+
+      <p style="margin-bottom:12px;color:#4a4239;">Enter your email and we'll send your full roadmap + the exact resources for your stage — no pressure, just the right next thing.</p>
+      <form class="capture" id="quiz-capture-form" action="https://systeme.io/embedded/42560585/subscription" method="post">
+        <input type="hidden" name="quiz_profile" id="quiz_profile" value="">
+        <input type="text" name="first_name" placeholder="First name" aria-label="First name" required>
+        <input type="email" name="email" placeholder="Your best email" aria-label="Email" required>
+        <button type="submit">Send My Roadmap</button>
+      </form>
+      <p class="reassure" id="quiz-reassure">No spam, no hype. Unsubscribe anytime.</p>
+      <p id="quiz-confirm" class="hidden" style="color:var(--moss);font-weight:700;font-size:15.5px;">✓ Check your inbox — your full roadmap and resources for your stage are on the way.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  Beyond the Pitch · Hype, into the real work. &nbsp;·&nbsp; <a href="index.html">← Back to home</a>
+</footer>
+
+<script>
+  const QUESTIONS = [
+    { q: "When someone asks what your business does, you...", a: "have a rough idea but stumble over it", b: "can explain it, but it's a little fuzzy", c: "have a crisp one-sentence answer" },
+    { q: "Have you confirmed real people want what you're offering?", a: "not yet — it's mostly my belief so far", b: "a few people said they'd buy", c: "yes — I've had real interest or sales" },
+    { q: "Your business's legal setup is...", a: "not started", b: "in progress / partly done", c: "registered and official" },
+    { q: "Your business finances are...", a: "mixed in with my personal money", b: "mostly separate, loosely tracked", c: "a separate account with real bookkeeping" },
+    { q: "Your pricing is...", a: "a guess I'm nervous about", b: "set, but I'm not sure it's right", c: "based on value and my costs, and I can defend it" },
+    { q: "Your first (or main) offer is...", a: "still an idea", b: "defined but not fully packaged", c: "clear, packaged, and buyable" },
+    { q: "Getting customers feels...", a: "overwhelming and unclear", b: "doable but inconsistent", c: "like a process I can repeat" },
+    { q: "When you hit a hard week, you...", a: "spiral and consider quitting", b: "wobble but keep going", c: "expect it and push through" },
+    { q: "Your business runs on...", a: "my memory and vibes", b: "a few notes and habits", c: "simple systems and tools" },
+    { q: "Right now, your biggest need is...", a: "knowing what to do first", b: "finishing the foundation", c: "growing and getting customers" }
+  ];
+
+  const RESULTS = {
+    dreamer: {
+      tag: "The Dreamer — mostly A's · you have the vision, not yet the foundation",
+      where: "full of ideas and energy, but the practical foundation isn't built yet — and that's exactly the right place to start.",
+      step: "get clear and validate. Nail your one sentence, talk to five potential customers, and start Phase 1–2 of the checklist.",
+      resourceHtml: 'the free checklist, then <a href="sales.html">Nobody Told Me This ($27)</a> when the self-doubt gets loud and you want the full walk-through.'
+    },
+    builder: {
+      tag: "The Builder — mostly B's · you've started, but the foundation is shaky",
+      where: "you've taken real steps, but a few missing pieces (legal, money, pricing) are making everything feel wobbly.",
+      step: "lock in Phase 2–3 — registration, a separate bank account, bookkeeping, and confident pricing.",
+      resourceHtml: 'the <em>Business Foundation First</em> course to finish the setup properly (coming soon — start with <a href="sales.html">the book</a> in the meantime), plus the <a href="membership.html">community</a> so you\'re not doing it alone.'
+    },
+    operator: {
+      tag: "The Operator — mostly C's · set up and running, now it's about growth",
+      where: "your foundation is solid and you're in business. The work now is consistent customers, systems, and scale.",
+      step: "a repeatable marketing engine and simple systems (Growth &amp; Systems pillars).",
+      resourceHtml: 'the <a href="membership.html">membership</a> for the systems and templates, and <a href="coaching.html">coaching</a> when you want a personalized plan.'
+    }
+  };
+
+  let current = 0;
+  const answers = new Array(QUESTIONS.length).fill(null);
+
+  function startQuiz(){
+    document.getElementById('screen-start').classList.add('hidden');
+    document.getElementById('screen-questions').classList.remove('hidden');
+    renderQuestion();
+  }
+
+  function renderQuestion(){
+    const item = QUESTIONS[current];
+    document.getElementById('progress-label').textContent = `Question ${current+1} of ${QUESTIONS.length}`;
+    document.getElementById('progress-fill').style.width = `${((current+1)/QUESTIONS.length)*100}%`;
+    document.getElementById('qtext').textContent = item.q;
+
+    const opts = ['a','b','c'];
+    const container = document.getElementById('options');
+    container.innerHTML = '';
+    opts.forEach(letter => {
+      const selected = answers[current] === letter;
+      const label = document.createElement('label');
+      label.className = 'option' + (selected ? ' selected' : '');
+      label.innerHTML = `<input type="radio" name="q${current}" value="${letter}" ${selected ? 'checked' : ''}><span>${item[letter]}</span>`;
+      label.addEventListener('click', () => selectAnswer(letter));
+      container.appendChild(label);
+    });
+
+    document.getElementById('btn-back').disabled = current === 0;
+    document.getElementById('btn-next').disabled = answers[current] === null;
+    document.getElementById('btn-next').textContent = current === QUESTIONS.length - 1 ? 'See My Results' : 'Next';
+  }
+
+  function selectAnswer(letter){
+    answers[current] = letter;
+    renderQuestion();
+  }
+
+  function nextQ(){
+    if(answers[current] === null) return;
+    if(current === QUESTIONS.length - 1){
+      showResults();
+    } else {
+      current++;
+      renderQuestion();
+    }
+  }
+
+  function prevQ(){
+    if(current === 0) return;
+    current--;
+    renderQuestion();
+  }
+
+  function showResults(){
+    const counts = { a: 0, b: 0, c: 0 };
+    answers.forEach(letter => counts[letter]++);
+
+    // Most frequent letter wins; on a tie, go with the earlier stage (a < b < c).
+    const max = Math.max(counts.a, counts.b, counts.c);
+    const winner = counts.a === max ? 'a' : counts.b === max ? 'b' : 'c';
+
+    const profileKey = winner === 'a' ? 'dreamer' : winner === 'b' ? 'builder' : 'operator';
+    const r = RESULTS[profileKey];
+
+    document.getElementById('profile-tag').textContent = r.tag;
+    document.getElementById('result-where').textContent = r.where;
+    document.getElementById('result-step').textContent = r.step;
+    document.getElementById('result-resource').innerHTML = r.resourceHtml;
+    document.getElementById('quiz_profile').value = profileKey;
+
+    document.getElementById('screen-questions').classList.add('hidden');
+    document.getElementById('screen-results').classList.remove('hidden');
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  document.getElementById('quiz-capture-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    fetch(form.action, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: new FormData(form)
+    }).finally(function () {
+      form.classList.add('hidden');
+      document.getElementById('quiz-reassure').classList.add('hidden');
+      document.getElementById('quiz-confirm').classList.remove('hidden');
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -56,7 +56,9 @@
   .prod-list{display:flex;flex-direction:column;gap:22px;}
   .prod-row{background:#fff;border:1px solid #ece2d5;border-radius:18px;padding:36px;display:grid;
     grid-template-columns:auto 1fr auto;gap:28px;align-items:center;}
-  .prod-row .pnum{font-family:var(--serif);font-size:34px;color:var(--sand);font-weight:600;}
+  .prod-row .picon{width:56px;height:56px;border-radius:50%;background:var(--blush);display:flex;
+    align-items:center;justify-content:center;flex:0 0 auto;}
+  .prod-row .picon img{width:26px;height:26px;object-fit:contain;}
   .prod-row .k{font-family:var(--sans);font-weight:700;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--terra-ink);}
   .prod-row h3{font-size:26px;margin:8px 0 8px;}
   .prod-row p{font-size:15.5px;color:#544c42;max-width:44em;}
@@ -129,7 +131,7 @@
     <div class="prod-list">
 
       <div class="prod-row">
-        <div class="pnum">01</div>
+        <div class="picon"><img src="assets/icon-courses.png" alt=""></div>
         <div>
           <span class="k">The book · $27</span>
           <h3>Nobody Told Me This</h3>
@@ -140,7 +142,7 @@
       </div>
 
       <div class="prod-row">
-        <div class="pnum">02</div>
+        <div class="picon"><img src="assets/icon-integrations.png" alt=""></div>
         <div>
           <span class="k">The course</span>
           <span class="badge-soon">Coming soon</span>
@@ -151,7 +153,7 @@
       </div>
 
       <div class="prod-row">
-        <div class="pnum">03</div>
+        <div class="picon"><img src="assets/icon-community.png" alt=""></div>
         <div>
           <span class="k">Membership · from $29/mo</span>
           <h3>Beyond the Pitch Membership</h3>
@@ -162,7 +164,7 @@
       </div>
 
       <div class="prod-row">
-        <div class="pnum">04</div>
+        <div class="picon"><img src="assets/icon-coaching.png" alt=""></div>
         <div>
           <span class="k">1:1 coaching · from $150</span>
           <h3>Coaching / Work With Me</h3>

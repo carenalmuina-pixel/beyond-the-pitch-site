@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Products — Beyond the Pitch</title>
+<meta name="description" content="Every paid offer from Beyond the Pitch — the book, the course, the membership, and 1:1 coaching. Built with care, sold with honesty.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Beau+Rivage&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<!-- Script accent (Playlist Script unavailable — Beau Rivage, a free Google Font, standing in). -->
+<style>
+  :root{
+    --sage:#6F7154; --moss:#3E4432; --terra:#D08B6E; --terra-ink:#A85A3C;
+    --blush:#F4E8E1; --sand:#EADCC9; --ivory:#FBF7F2; --ink:#40382F; --muted:#847E6E;
+    --serif:'Cormorant Garamond',Georgia,serif; --sans:'Lato',-apple-system,Arial,sans-serif;
+    --script:'Beau Rivage',cursive;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);color:var(--ink);background:var(--ivory);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:var(--serif);color:var(--moss);font-weight:600;line-height:1.12;}
+  a{color:inherit;text-decoration:none;}
+  .em{font-style:italic;color:var(--terra-ink);}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 26px;}
+  .btn{display:inline-block;font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:.3px;
+    padding:14px 30px;border-radius:8px;cursor:pointer;transition:.2s;border:2px solid transparent;}
+  .btn-primary{background:var(--terra-ink);color:#fff;}
+  .btn-primary:hover{background:#95502f;}
+  .btn-ghost{border-color:var(--sage);color:var(--moss);background:transparent;}
+  .btn-ghost:hover{background:var(--sage);color:#fff;}
+  .btn-disabled{background:var(--sand);color:var(--muted);cursor:default;}
+  .eyebrow{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra-ink);}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(251,247,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid #ece2d5;}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px;}
+  .brand{display:flex;align-items:center;gap:11px;}
+  .brand .mark{height:38px;width:auto;flex:0 0 auto;}
+  .brand .wordmark{font-family:var(--serif);font-size:23px;font-weight:600;color:var(--moss);letter-spacing:.3px;}
+  .brand .wordmark i{font-family:var(--script);font-style:normal;font-size:1.3em;color:var(--terra-ink);}
+  nav.menu{display:flex;align-items:center;gap:26px;}
+  nav.menu a{font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--moss);}
+  nav.menu a:hover{color:var(--terra-ink);}
+  nav.menu .btn{padding:10px 20px;}
+  .menu-links{display:flex;gap:26px;align-items:center;}
+
+  section.pad{padding:70px 0;}
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 44px;}
+  .sec-head h2{font-size:38px;margin:10px 0 12px;}
+  .sec-head p{color:#4a4239;font-size:18px;}
+
+  .hero-prod{padding-top:60px;text-align:center;}
+  .hero-prod h1{font-size:52px;margin:14px 0 18px;}
+  .hero-prod .lead{font-size:19px;color:#4a4239;max-width:36em;margin:0 auto;}
+
+  .prod-list{display:flex;flex-direction:column;gap:22px;}
+  .prod-row{background:#fff;border:1px solid #ece2d5;border-radius:18px;padding:36px;display:grid;
+    grid-template-columns:auto 1fr auto;gap:28px;align-items:center;}
+  .prod-row .pnum{font-family:var(--serif);font-size:34px;color:var(--sand);font-weight:600;}
+  .prod-row .k{font-family:var(--sans);font-weight:700;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--terra-ink);}
+  .prod-row h3{font-size:26px;margin:8px 0 8px;}
+  .prod-row p{font-size:15.5px;color:#544c42;max-width:44em;}
+  .prod-row .price{font-family:var(--serif);font-size:22px;color:var(--moss);font-weight:600;margin-top:10px;}
+  .prod-row .cta{text-align:center;white-space:nowrap;}
+  .badge-soon{display:inline-block;background:var(--blush);color:var(--terra-ink);font-size:11px;font-weight:700;
+    letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-bottom:8px;}
+
+  .guarantee{background:var(--sand);text-align:center;}
+  .guarantee h2{font-size:32px;margin-bottom:12px;}
+  .guarantee p{max-width:34em;margin:0 auto;font-size:17px;color:#4a4239;}
+
+  .final{background:var(--blush);text-align:center;}
+  .final h2{font-size:40px;margin-bottom:14px;}
+  .final p{font-size:18px;color:#4a4239;max-width:32em;margin:0 auto 28px;}
+
+  footer{background:var(--moss);color:#cdc7ba;padding:52px 0 30px;}
+  footer .fgrid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;align-items:flex-start;}
+  footer .flogo{display:flex;align-items:center;gap:9px;}
+  footer .flogo img{height:28px;width:auto;}
+  footer .wordmark{font-family:var(--serif);font-size:24px;color:#f4f0e7;}
+  footer .wordmark i{font-family:var(--script);font-style:normal;font-size:1.3em;color:var(--terra);}
+  footer .tag{font-family:var(--sans);letter-spacing:2px;text-transform:uppercase;font-size:11px;color:var(--terra);margin-top:8px;}
+  footer nav a{display:block;color:#cdc7ba;font-size:14px;margin-bottom:9px;}
+  footer nav a:hover{color:#fff;}
+  footer .fine{border-top:1px solid #4b513e;margin-top:34px;padding-top:18px;font-size:12.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:#948e7f;}
+
+  @media(max-width:860px){
+    .hero-prod h1{font-size:36px;}
+    .prod-row{grid-template-columns:1fr;text-align:left;}
+    .prod-row .cta{text-align:left;}
+    .menu-links{display:none;}
+    .sec-head h2{font-size:28px;} .final h2{font-size:30px;} .guarantee h2{font-size:26px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Beyond the Pitch home">
+      <img class="mark" src="assets/logo-mark.png" alt="">
+      <span class="wordmark">beyond <i>the</i> pitch</span>
+    </a>
+    <nav class="menu">
+      <div class="menu-links">
+        <a href="about.html">About</a>
+        <a href="coaching.html">Coaching</a>
+        <a href="resources.html">Resources</a>
+        <a href="membership.html">Community</a>
+      </div>
+      <a class="btn btn-primary" href="optin.html">Get the Free Checklist</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="pad hero-prod">
+  <div class="wrap">
+    <span class="eyebrow">Built with care</span>
+    <h1>Planners, workbooks, and guidance <span class="em">that support your growth.</span></h1>
+    <p class="lead">Every paid offer we've built — one page, honest pricing, no fake urgency. Start free, go deeper whenever you're ready.</p>
+  </div>
+</section>
+
+<!-- ============ PRODUCT LIST ============ -->
+<section class="pad" style="padding-top:0;">
+  <div class="wrap">
+    <div class="prod-list">
+
+      <div class="prod-row">
+        <div class="pnum">01</div>
+        <div>
+          <span class="k">The book · $27</span>
+          <h3>Nobody Told Me This</h3>
+          <p>Everything I wish I knew about mindset before building my business — the honest, personal walk-through of the moment this whole brand exists because of. Start here if you want the full story, not just the checklist.</p>
+          <div class="price">$27 · one-time</div>
+        </div>
+        <div class="cta"><a class="btn btn-primary" href="sales.html">Get the Book</a></div>
+      </div>
+
+      <div class="prod-row">
+        <div class="pnum">02</div>
+        <div>
+          <span class="k">The course</span>
+          <span class="badge-soon">Coming soon</span>
+          <h3>Business Foundation First</h3>
+          <p>The step-by-step system to set up your business the right way — legal, banking, your first offer, and pricing — in a weekend, without the guesswork. Not open yet; the book covers the mindset work in the meantime.</p>
+        </div>
+        <div class="cta"><a class="btn btn-disabled">Coming Soon</a></div>
+      </div>
+
+      <div class="prod-row">
+        <div class="pnum">03</div>
+        <div>
+          <span class="k">Membership · from $29/mo</span>
+          <h3>Beyond the Pitch Membership</h3>
+          <p>Guidance, templates, and a room full of people on the same mission — so you stop second-guessing every decision alone. Three tiers, cancel anytime.</p>
+          <div class="price">From $29/mo</div>
+        </div>
+        <div class="cta"><a class="btn btn-primary" href="membership.html">See Membership</a></div>
+      </div>
+
+      <div class="prod-row">
+        <div class="pnum">04</div>
+        <div>
+          <span class="k">1:1 coaching · from $150</span>
+          <h3>Coaching / Work With Me</h3>
+          <p>Personalized guidance when you're past the very beginning and ready for a clear plan, honest accountability, and someone in your corner.</p>
+          <div class="price">From $150 per session</div>
+        </div>
+        <div class="cta"><a class="btn btn-primary" href="coaching.html">Book a Fit Call</a></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ GUARANTEE ============ -->
+<section class="pad guarantee">
+  <div class="wrap">
+    <span class="eyebrow">The honest guarantee</span>
+    <h2>If it isn't the clearest step you've seen, we'll make it right.</h2>
+    <p>Every paid offer comes with the same promise: go through the first real piece of it. If it isn't the clearest, most useful thing you've bought, reach out within 14 days for a full refund. No hoops.</p>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="pad final">
+  <div class="wrap">
+    <span class="eyebrow">Not sure where to start?</span>
+    <h2>Start free. Go deeper when you're ready.</h2>
+    <p>The Start Your Business Checklist is the honest first step — no email tricks, no pressure to buy anything.</p>
+    <a class="btn btn-primary" href="optin.html">Get the Free Checklist</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="flogo"><img src="assets/logo-badge-terracotta.png" alt=""><div class="wordmark">beyond <i>the</i> pitch</div></div>
+        <div class="tag">Hype, into the real work.</div>
+      </div>
+      <nav>
+        <a href="optin.html">Free Checklist</a>
+        <a href="sales.html">The Book</a>
+        <a href="membership.html">Community</a>
+        <a href="about.html">About</a>
+      </nav>
+      <nav>
+        <a href="coaching.html">Coaching</a>
+        <a href="resources.html">Resources</a>
+        <a href="products.html">Products</a>
+        <a href="optin.html">Newsletter</a>
+      </nav>
+    </div>
+    <div class="fine">
+      <span>© 2026 Beyond the Pitch. All rights reserved.</span>
+      <span>We don't do hype. We build real businesses and real freedom.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

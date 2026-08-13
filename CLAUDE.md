@@ -14,6 +14,20 @@ Coaching business (JLAC Ventures LLC), repositioning from a soccer-coaching funn
 
 The core positioning shift: this is no longer a coaching-only funnel, it's a real-time build log of the whole conglomerate. Content should document actual work as it happens — wins, losses, and the unglamorous parts — not manufactured inspiration. Coordinate with the `content-studio-lead` and `social-media-director` agents on cadence; content here will often be *about* work happening in the other repos (OmniClip, and eventually Klypt/Curblist/Lumina), so cross-reference what's actually shipping there rather than inventing a narrative.
 
+## Content production system
+
+The full documentary content vault (brand reference, script template, 90-day/
+7-pillar rotation map, vaulted Foundation-pillar scripts, production ops,
+status tracker) lives on the **`content-vault` git branch**, not on `master`.
+It's kept off the branch GitHub Pages serves deliberately — it's internal
+production material (source calendar/playbook, brand board images, honest
+"not built yet" status notes), not something meant to be publicly browsable
+at beyondthepitch.life. Check out that branch to read or extend it. The one
+piece of it that *is* meant to be public — the "Start Your Business Checklist"
+lead magnet `optin.html` promises — is mirrored onto `master` at
+`resources/start-your-business-checklist.pdf`; if the vault's copy changes,
+re-copy it there too.
+
 ## What's not done yet
 
 - Checkout is not wired to any payment processor — don't imply otherwise in copy.

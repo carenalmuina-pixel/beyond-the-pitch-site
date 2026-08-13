@@ -2,9 +2,13 @@
 # Everything else (strategy docs, PDFs, design references, personal photos) stays local.
 # Exception: CLAUDE.md and .claude/ are operating config for Claude Code itself,
 # not project content — they need to persist in git so future sessions inherit them.
-# Exception: content-vault/ is the production system for Beyond the Pitch content
-# (scripts, storyboards, source calendar/playbook) — it needs to persist in git too,
-# not live only in one local session.
+# Exception: resources/ holds public downloadable assets meant to be served by the
+# site itself (lead magnets, etc.) — deliberately public, unlike content-vault below.
+#
+# content-vault/ (the internal production system for Beyond the Pitch content —
+# scripts, storyboards, source calendar/playbook) deliberately does NOT live here.
+# It's tracked on the separate `content-vault` git branch instead, so it persists
+# for future sessions without being served publicly by GitHub Pages off master.
 *
 !*.html
 !assets/
@@ -14,5 +18,5 @@
 !CLAUDE.md
 !.claude/
 !.claude/**
-!content-vault/
-!content-vault/**
+!resources/
+!resources/**

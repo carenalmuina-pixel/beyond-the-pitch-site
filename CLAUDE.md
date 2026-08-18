@@ -1,6 +1,8 @@
 # Beyond the Pitch — Project Doctrine
 
-Coaching business (JLAC Ventures LLC), repositioning from a soccer-coaching funnel to a raw, follow-along documentary series chronicling Caren building her whole venture portfolio (OmniClip, Klypt, Curblist, Lumina, the public-adjusting businesses) to a million-dollar valuation. See `/root/.claude/CLAUDE.md` for the cross-venture doctrine this project inherits.
+Coaching business, repositioning from a soccer-coaching funnel to a raw, follow-along documentary series chronicling Caren building her whole venture portfolio (OmniClip, Klypt, Curblist, Lumina, the public-adjusting businesses) to a million-dollar valuation. See `/root/.claude/CLAUDE.md` for the cross-venture doctrine this project inherits.
+
+> ⚠️ **No legal entity owns this product.** "JLAC Ventures LLC" was intended in July 2026 but the filing was REJECTED and the entity never existed — do not reintroduce that name anywhere. Confirmed on Sunbiz 2026-08-03, the owner's only Florida entities are `JLAC, CORP.` (P22000074933) and `KULEANA CLAIM SOLUTIONS, LLC` (L26000262262, a public-adjusting company); neither owns this. It therefore operates as an unincorporated sole proprietorship with **no liability shield** — liability reaches Caren's personal assets directly. The rejected filing is correctable until **2026-09-21** (tracking 500478530445).
 
 ## Current state (audited 2026-08-05)
 

@@ -43,6 +43,8 @@
   .reassure{font-size:13px;color:var(--muted);margin-top:16px;font-style:italic;}
   footer{text-align:center;padding:22px;font-size:12.5px;color:var(--muted);}
   footer a{color:var(--sage);text-decoration:none;}
+  footer a:hover{text-decoration:underline;}
+  .reassure a{color:var(--sage);}
   @media(max-width:600px){.card{padding:38px 26px;}h1{font-size:33px;}}
 </style>
 </head>
@@ -68,11 +70,12 @@
         <input type="email" name="email" placeholder="Your best email" aria-label="Email" required>
         <button type="submit">Send Me the Checklist</button>
       </form>
-      <p class="reassure">No spam, no hype. Just the honest steps and a weekly note worth opening. Unsubscribe anytime.</p>
+      <p class="reassure">No spam, no hype. Just the honest steps and a weekly note worth opening. Unsubscribe anytime. See our <a href="privacy-policy.html">Privacy Policy</a>.</p>
     </div>
   </main>
   <footer>
     Beyond the Pitch · Hype, into the real work. &nbsp;·&nbsp; <a href="index.html">← Back to home</a>
+    <br><a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms-of-service.html">Terms of Service</a>
   </footer>
   <script>
     document.getElementById('optin-form').addEventListener('submit', function (e) {

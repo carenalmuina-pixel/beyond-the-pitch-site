@@ -6,7 +6,9 @@ Coaching business, repositioning from a soccer-coaching funnel to a raw, follow-
 
 ## Current state (audited 2026-08-05)
 
-11 static HTML pages, inline styling, no CSS/JS build, no CMS. **Checkout is still unwired** — `sales.html` and `membership.html` have `href="#"` placeholders with an explicit comment marking them as Systeme.io/Payhip connection points once a real product exists there. No tests, no CI, no backend. This is the least built-out of Caren's active properties — treat any claim of "done" here skeptically until verified against the actual files.
+12 static HTML pages, inline styling, no CSS/JS build, no CMS. **Checkout is still unwired** — `sales.html` and `membership.html` have `href="#"` placeholders with an explicit comment marking them as Systeme.io/Payhip connection points once a real product exists there. `coaching.html` has the same kind of placeholder behind "Book a Fit Call" (a booking link, not a processor), and `thank-you.html` — which currently has no inbound links at all, since `optin.html` redirects to Systeme.io instead — has two more. No tests, no CI (only the GitHub Pages deploy workflow, which runs on `master`), no backend. This is the least built-out of Caren's active properties — treat any claim of "done" here skeptically until verified against the actual files.
+
+The legal pages (`privacy-policy.html`, `terms-of-service.html`) are linked from every page's footer, and `optin.html` links the privacy policy next to its form since that's where personal data is collected. Their payment sections state plainly that **no processor is connected and nothing is for sale** — do not reintroduce Stripe or any other processor name until one is actually wired, and note that the terms deliberately leave the refund policy unset (`sales.html` advertises a 14-day guarantee, which the terms will need to match once there is something to sell).
 
 ## The AI Executive Team
 
@@ -32,6 +34,7 @@ re-copy it there too.
 
 ## What's not done yet
 
-- Checkout is not wired to any payment processor — don't imply otherwise in copy.
+- Checkout is not wired to any payment processor — don't imply otherwise in copy, and don't name a processor in the legal pages until one exists.
+- **The lead magnet's delivery has never been confirmed end to end.** `resources/start-your-business-checklist.pdf` is verified real and byte-identical to the `content-vault` copy, but nothing on the site links it — `optin.html` POSTs to Systeme.io and redirects to a Systeme.io page, so delivery depends entirely on that external funnel. As of 2026-08-25 no delivery email had ever arrived in the connected mailbox. Confirm by submitting the form before trusting any CTA that promises the checklist.
 - No brand-voice system distinct from Caren's personal brand yet (uses the personal brand `typography-systems` system by default per global doctrine, until/unless Beyond the Pitch earns its own).
 - No analytics/tracking instrumented — the `analytics-lead` agent has nothing real to read yet; flag this rather than fabricating numbers.

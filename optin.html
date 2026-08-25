@@ -41,8 +41,13 @@
     border-radius:9px;background:var(--terra-ink);color:#fff;cursor:pointer;transition:.2s;}
   button:hover{background:#95502f;}
   .reassure{font-size:13px;color:var(--muted);margin-top:16px;font-style:italic;}
+  .formerr{font-size:14px;color:#8c2f1c;background:#fbeae5;border:1px solid #f0cfc4;
+    border-radius:9px;padding:12px 14px;margin:16px auto 0;max-width:24em;text-align:left;}
+  .formerr a{color:#8c2f1c;font-weight:700;}
   footer{text-align:center;padding:22px;font-size:12.5px;color:var(--muted);}
   footer a{color:var(--sage);text-decoration:none;}
+  footer a:hover{text-decoration:underline;}
+  .reassure a{color:var(--sage);}
   @media(max-width:600px){.card{padding:38px 26px;}h1{font-size:33px;}}
 </style>
 </head>
@@ -68,11 +73,13 @@
         <input type="email" name="email" placeholder="Your best email" aria-label="Email" required>
         <button type="submit">Send Me the Checklist</button>
       </form>
-      <p class="reassure">No spam, no hype. Just the honest steps and a weekly note worth opening. Unsubscribe anytime.</p>
+      <p class="formerr" id="optin-error" role="alert" hidden>That didn't go through — check your connection and try again. If it keeps failing, email <a href="mailto:connect@beyondthepitch.life">connect@beyondthepitch.life</a> and we'll send the checklist directly.</p>
+      <p class="reassure">No spam, no hype. Just the honest steps and a weekly note worth opening. Unsubscribe anytime. See our <a href="privacy-policy.html">Privacy Policy</a>.</p>
     </div>
   </main>
   <footer>
     Beyond the Pitch · Hype, into the real work. &nbsp;·&nbsp; <a href="index.html">← Back to home</a>
+    <br><a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms-of-service.html">Terms of Service</a>
   </footer>
   <script>
     document.getElementById('optin-form').addEventListener('submit', function (e) {
@@ -82,12 +89,20 @@
       btn.disabled = true;
       btn.textContent = 'Sending...';
 
+      // no-cors makes the response opaque, so an HTTP error (4xx/5xx) still
+      // resolves and can't be detected here. A network-level failure — offline,
+      // DNS, connection refused — does reject, so at minimum don't send those
+      // visitors to a thank-you page for a signup that never left the browser.
       fetch(form.action, {
         method: 'POST',
         mode: 'no-cors',
         body: new FormData(form)
-      }).finally(function () {
+      }).then(function () {
         window.location.href = 'https://canyoudoit345.systeme.io/ab8fb553';
+      }).catch(function () {
+        document.getElementById('optin-error').hidden = false;
+        btn.disabled = false;
+        btn.textContent = 'Send Me the Checklist';
       });
     });
   </script>
